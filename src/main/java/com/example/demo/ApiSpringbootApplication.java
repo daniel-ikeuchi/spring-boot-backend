@@ -1,13 +1,31 @@
 package com.example.demo;
 
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class ApiSpringbootApplication {
+import com.example.demo.domain.Categoria;
+import com.example.demo.repositories.CategoriaReposistory;
 
+@SpringBootApplication
+public class ApiSpringbootApplication implements CommandLineRunner {
+
+	@Autowired
+	private CategoriaReposistory categoriaReposistory;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(ApiSpringbootApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Categoria cat1 = new Categoria(null, "Informática");
+		Categoria cat2 = new Categoria(null, "Escritório");
+		
+		categoriaReposistory.saveAll(Arrays.asList(cat1, cat2));
 	}
 
 }
