@@ -14,7 +14,7 @@ import com.example.demo.domain.Endereco;
 import com.example.demo.domain.Estado;
 import com.example.demo.domain.Produto;
 import com.example.demo.domain.enums.TipoCliente;
-import com.example.demo.repositories.CategoriaReposistory;
+import com.example.demo.repositories.CategoriaRepository;
 import com.example.demo.repositories.CidadeRepository;
 import com.example.demo.repositories.ClienteRepository;
 import com.example.demo.repositories.EnderecoRepository;
@@ -25,7 +25,7 @@ import com.example.demo.repositories.ProdutoReposistory;
 public class ApiSpringbootApplication implements CommandLineRunner {
 
 	@Autowired
-	private CategoriaReposistory categoriaReposistory;
+	private CategoriaRepository categoriaReposistory;
 	@Autowired
 	private ProdutoReposistory produtoReposistory;
 	@Autowired
