@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class CategoriaService {
 	public Categoria insert(Categoria obj) {
 		obj.setId(null);
 		return repository.save(obj);
+	}
+	
+	public List<Categoria> findAll() {
+		return repository.findAll();
 	}
 
 	public Categoria findById(Integer id) {
